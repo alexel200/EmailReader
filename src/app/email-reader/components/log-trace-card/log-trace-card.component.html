@@ -1,0 +1,21 @@
+<div class="card rounded-3 m-3 p-3" >
+  <h2>{{ field.name | titlecase }}</h2>
+  <div class="row">
+    <span>isValid: <strong>{{ field.status?.isValid}}</strong></span>
+  </div>
+  <div class="row">
+    <span>isTouched: <strong>{{field.status?.isTouched}}</strong></span>
+  </div>
+  <div class="row">
+    <span>isDirty: <strong>{{field.status?.isTouched}}</strong></span>
+  </div>
+  <div class="row" *ngIf="field.errors?.required">
+    <span>Required: <strong>{{field.errors?.required}}</strong></span>
+  </div>
+  <div class="row" *ngIf="field.errors?.pattern">
+    <span>Pattern: <strong>{{field.errors?.pattern | json}}</strong></span>
+  </div>
+  <div class="row" *ngIf="field.errors?.minlength">
+    <span>Minlength: <strong>{{field.errors?.minlength | json}}</strong></span>
+  </div>
+</div>
