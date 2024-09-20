@@ -32,3 +32,9 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Pictures
+<img width="1440" alt="Field validations" src="https://github.com/user-attachments/assets/212a2f1d-3525-4716-a697-a1294d8b0206">
+<img width="1440" alt="Valid form" src="https://github.com/user-attachments/assets/7884a27b-146b-4ae5-8403-f448ea92ddd0">
+<img width="1440" alt="Alert after sending email" src="https://github.com/user-attachments/assets/246b11f3-1c79-4e99-b33a-966bf507fa33">
+<img width="364" alt="Responsive design" src="https://github.com/user-attachments/assets/56c5f6e3-1496-4b7e-ba81-f17a5ea0f8a3">
