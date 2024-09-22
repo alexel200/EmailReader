@@ -19,7 +19,7 @@
   box-shadow: 0 2px 4px 0 rgba(255,255,255,.6);
 }
 
-@media screen and (max-width: 380px){
+@media screen and (max-width: 480px){
   .actions{
     position: relative;
     padding-top: 0.5rem;
