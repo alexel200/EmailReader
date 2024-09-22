@@ -38,7 +38,7 @@ fieldset legend{
   box-shadow: 0 2px 2px 1px rgba(174,156,110  ,.6);
 }
 
-@media screen and (max-width: 380px){
+@media screen and (max-width: 480px){
   .navbar-brand img{
     max-width: 6rem;
   }
