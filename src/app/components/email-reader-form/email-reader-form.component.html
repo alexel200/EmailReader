@@ -101,7 +101,7 @@
                             bodyField.invalid && bodyField.touched ? 'invalid-field is-invalid' : '' "
     ></textarea>
   </div>
-  <div class="col-md-12 actions mt-3">
+  <div class="col-md-12 mt-3" [ngClass]="formType == 'list' ? 'actionslist' : 'actions'  ">
     <button type="reset" class="btn btn-primary btn-lg pl-3 pr-3" (click)="clearEmail()">Clear</button>
     <button type="submit" class="btn btn-primary btn-lg pl-3 pr-3" [disabled]="!emailForm.form.valid" >Send!</button>
   </div>

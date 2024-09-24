@@ -1,13 +1,15 @@
 import {JsonPipe, NgForOf, NgIf, NgStyle} from "@angular/common";
-import {Component, signal} from '@angular/core';
+import {Component, signal, ViewChild} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {NgbAlert} from "@ng-bootstrap/ng-bootstrap";
 import {ResizableModule, ResizeEvent} from "angular-resizable-element";
-import {EmailReaderFormComponent} from "../../components/email-reader-form/email-reader-form.component";
-import {LogTraceCardComponent} from "../../components/log-trace-card/log-trace-card.component";
-import {UpToDateComponent} from "../../components/up-to-date/up-to-date.component";
-import {Email} from "../../interfaces/email";
-import {FormLog} from "../../interfaces/formLog.interface";
+import {EmailReaderFormComponent} from "../../../components/email-reader-form/email-reader-form.component";
+import {LogTraceCardComponent} from "../../../components/log-trace-card/log-trace-card.component";
+import {UpToDateComponent} from "../../../components/up-to-date/up-to-date.component";
+import {Email} from "../../../interfaces/email";
+import {FormLog} from "../../../interfaces/formLog.interface";
+import {EmailService} from "../../../services/email.service";
+
 
 @Component({
   selector: 'app-email-reader-basic',
@@ -25,14 +27,17 @@ import {FormLog} from "../../interfaces/formLog.interface";
     NgStyle
   ],
   templateUrl: './email-reader-basic.component.html',
-  styleUrl: './email-reader-basic.component.css'
+  styleUrl: './email-reader-basic.component.css',
 })
 export class EmailReaderBasicComponent{
-  emails: Email[] = []
+  @ViewChild(UpToDateComponent) upToDate?:UpToDateComponent;
   formLogTrace = signal<FormLog>({form:{}, fields: []});
   tmpMessage: Email = {}
   displayAlert:boolean = false;
   public style: object = {};
+
+  constructor(private emailService: EmailService) {
+  }
 
   onResizeEnd(event: ResizeEvent) {
     this.style = {
@@ -50,7 +55,8 @@ export class EmailReaderBasicComponent{
       this.displayAlert = false;
       this.tmpMessage = {};
     }, 3000);
-    this.emails.push({...email});
+    this.emailService.addEmail({...email})
+    this.upToDate?.loadEmails();
   }
 
   loadEmailForm(formLogTrace: FormLog){

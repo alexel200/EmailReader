@@ -1,0 +1,25 @@
+<ul class="list-group list-group-numbered">
+  <ng-container *ngFor="let email of emails | emailFilter: emailFilterValue: emailSearchText">
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">{{ email.subject }}</div>
+        From:{{email.from}} &nbsp;
+        To:{{email.to}}
+      </div>
+      <div>
+        <span>
+          <button class="btn btn-icon">
+            <fa-icon [icon]="faEnvelopeOpen" (click)="viewEmail(email.id)"></fa-icon>
+          </button>
+        </span>
+        <span>
+          <button class="btn btn-icon" (click)="deleteEmail(email.id)">
+            <fa-icon [icon]="faTrashCan"></fa-icon>
+          </button>
+        </span>
+      </div>
+    </li>
+  </ng-container>
+</ul>
+
+

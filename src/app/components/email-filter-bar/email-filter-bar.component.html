@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="switch">
+      <input id="switch-y"
+             name="tripple"
+             type="radio"
+             value="with-body"
+             class="switch-input"
+             [checked]="emailFilter == 'with-body'"
+             [(ngModel)]="emailFilter"
+             (change)="updateFilter($event)"
+      />
+      <label for="switch-y" class="switch-label switch-label-y">With Body</label>
+      <input id="switch-i"
+             name="tripple"
+             type="radio"
+             value="all"
+             class="switch-input"
+             [checked]="emailFilter == 'all'"
+             [(ngModel)]="emailFilter"
+             (change)="updateFilter($event)"
+      />
+      <label for="switch-i" class="switch-label switch-label-i">All</label>
+      <input
+        id="switch-n"
+        name="tripple"
+        type="radio"
+        value="without-body"
+        class="switch-input"
+        [checked]="emailFilter == 'without-body'"
+        [(ngModel)]="emailFilter"
+        (change)="updateFilter($event)"
+      />
+      <label for="switch-n" class="switch-label switch-label-n">Without Body</label>
+      <span class="switch-selector"></span>
+    </div>
+  </div>
+</div>

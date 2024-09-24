@@ -9,6 +9,13 @@
   justify-content: space-between;
 }
 
+.actionslist{
+  max-width: 100%;
+  bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
 .invalid-field{
   border: solid 4px #dc3545;
   box-shadow: 0 2px 4px 0 rgba(255,255,255,.6);

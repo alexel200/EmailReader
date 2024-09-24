@@ -1,0 +1,9 @@
+table{
+  box-shadow: 2px 4px 4px 2px rgba(174,156,110  ,.6);
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}

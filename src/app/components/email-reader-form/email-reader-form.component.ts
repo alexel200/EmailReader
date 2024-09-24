@@ -1,5 +1,5 @@
-import {JsonPipe, NgClass} from "@angular/common";
-import {AfterViewInit, Component, EventEmitter, Output, ViewChild} from '@angular/core';
+import {JsonPipe, Location, NgClass} from "@angular/common";
+import {AfterViewInit, Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HighlightDirective} from "../../directives/highlight.directive";
 import {Email} from "../../interfaces/email";
@@ -20,10 +20,15 @@ import {Field, FormLog, FormStatus} from "../../interfaces/formLog.interface";
 })
 export class EmailReaderFormComponent implements AfterViewInit{
   @ViewChild('emailForm') emailForm!:any;
+  @Input() formType: string = '';
   @Output() emitEmail: EventEmitter<Email> = new EventEmitter<Email>();
   @Output() emitEmailForm: EventEmitter<FormLog> = new EventEmitter<FormLog>();
   email: Email = {};
   formStatusTrace: FormLog = {form: {}, fields:[]};
+
+  constructor(private location: Location) {
+  }
+
   clearEmail() {
     this.emailForm.reset();
   }
@@ -31,6 +36,9 @@ export class EmailReaderFormComponent implements AfterViewInit{
   sendEmail() {
     this.emitEmail.emit(this.email);
     this.emailForm.reset();
+    if(this.formType == 'list'){
+      this.location.back();
+    }
   }
 
   ngAfterViewInit() {

@@ -1,0 +1,35 @@
+
+<div class="col-sm-12">
+  <fieldset class="rounded-3 p-3 overflow-y-auto" [ngClass]="emailPresentationType=='list' ? 'fieldsetList':'fieldsetTable'">
+    <legend class="float-none w-auto px-3">Up to date</legend>
+    <div class="d-flex mb-1 justify-content-between">
+      <button class="btn btn-danger" (click)="deleteEmails()" [disabled]="emails.length === 0">
+        Delete All
+        <fa-icon [icon]="faTrashCan"></fa-icon>
+      </button>
+      <button class="btn btn-primary" *ngIf="emailPresentationType==='list'" (click)="addEmail()">
+        New Email
+        <fa-icon [icon]="faAdd"></fa-icon>
+      </button>
+    </div>
+    @if(emails.length == 0){
+      <h6 class="text-black">The list of emails is empty</h6>
+    }@else{
+    <div class="table-responsive" [ngClass]="emailPresentationType=='list' ? 'messageList':'messageTable'">
+
+      <app-email-search-bar *ngIf="emails.length > 0" [emailSearchText]="emailSearchText" (searchEmailEmitter)="searchIntoEmail($event)"/>
+
+      @if(emailPresentationType == 'table'){
+        <app-email-table [emails]="emails" [emailSearchText]="emailSearchText" [emailFilterValue]="emailFilterValue" (viewEmailEmitter)="viewEmail($event)"></app-email-table>
+      }
+
+      @if(emailPresentationType == 'list'){
+        <app-email-list [emails]="emails" [emailSearchText]="emailSearchText" [emailFilterValue]="emailFilterValue" (viewEmailEmitter)="viewEmail($event)"></app-email-list>
+      }
+    </div>
+    <app-email-filter-bar [emailFilter]="emailFilterValue" (emailFilterEmitter)="updateFilter($event)"/>
+    }
+  </fieldset>
+</div>
+
+
