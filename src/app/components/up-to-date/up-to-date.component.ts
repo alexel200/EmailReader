@@ -4,10 +4,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {Router} from "@angular/router";
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
 import {faAdd} from "@fortawesome/free-solid-svg-icons/faAdd";
-import {faEnvelopeOpen} from "@fortawesome/free-solid-svg-icons/faEnvelopeOpen";
 import {faSearch} from "@fortawesome/free-solid-svg-icons/faSearch";
 import {faTrashCan} from "@fortawesome/free-solid-svg-icons/faTrashCan";
-import {ResizableModule} from "angular-resizable-element";
 import Swal from "sweetalert2";
 import {Email} from "../../interfaces/email";
 import {EmailFilterPipe} from "../../pipes/email-filter.pipe";
@@ -24,7 +22,6 @@ import {EmailTableComponent} from "../email-table/email-table.component";
   imports: [
     JsonPipe,
     ReactiveFormsModule,
-    ResizableModule,
     NgIf,
     NgForOf,
     FaIconComponent,

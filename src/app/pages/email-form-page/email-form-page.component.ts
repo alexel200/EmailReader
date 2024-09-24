@@ -37,6 +37,6 @@ export class EmailFormPageComponent {
   }
 
   loadEmailForm(formLogTrace: FormLog){
-    console.log(formLogTrace);
+    //console.log(formLogTrace);
   }
 }

@@ -2,7 +2,6 @@ import {JsonPipe, NgForOf, NgIf, NgStyle} from "@angular/common";
 import {Component, signal, ViewChild} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {NgbAlert} from "@ng-bootstrap/ng-bootstrap";
-import {ResizableModule, ResizeEvent} from "angular-resizable-element";
 import {EmailReaderFormComponent} from "../../../components/email-reader-form/email-reader-form.component";
 import {LogTraceCardComponent} from "../../../components/log-trace-card/log-trace-card.component";
 import {UpToDateComponent} from "../../../components/up-to-date/up-to-date.component";
@@ -18,7 +17,6 @@ import {EmailService} from "../../../services/email.service";
     UpToDateComponent,
     JsonPipe,
     FormsModule,
-    ResizableModule,
     EmailReaderFormComponent,
     NgIf,
     LogTraceCardComponent,
@@ -39,14 +37,16 @@ export class EmailReaderBasicComponent{
   constructor(private emailService: EmailService) {
   }
 
-  onResizeEnd(event: ResizeEvent) {
-    this.style = {
-      left: `${event.rectangle.left}px`,
-      top: `${event.rectangle.top}px`,
-      width: `${event.rectangle.width}px`,
-      height: `${event.rectangle.height}px`
-    };
-  }
+  // onResizeEnd(event: ResizeEvent) {
+  //   this.style = {
+  //     left: `${event.rectangle.left}px`,
+  //     top: `${event.rectangle.top}px`,
+  //     width: `${event.rectangle.width}px`,
+  //     height: `${event.rectangle.height}px`
+  //   };
+  //
+  //   console.log(event);
+  // }
 
   sendEmail(email: Email):void {
     this.tmpMessage = {...email};
@@ -62,5 +62,4 @@ export class EmailReaderBasicComponent{
   loadEmailForm(formLogTrace: FormLog){
     this.formLogTrace.update( () => formLogTrace );
   }
-
 }

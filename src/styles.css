@@ -11,7 +11,7 @@ nav{
 .navbar-brand{
   color: #fff;
   font-weight: bold;
-  font-size: xxx-large;
+  font-size: xx-large;
 }
 .navbar-brand:focus, .navbar-brand:hover{
   color: #fff;
@@ -38,12 +38,19 @@ fieldset legend{
   box-shadow: 0 2px 2px 1px rgba(174,156,110  ,.6);
 }
 
+.is-active{
+  font-weight: bolder !important;
+  color: #fff;
+}
+
 @media screen and (max-width: 480px){
   .navbar-brand img{
     max-width: 6rem;
   }
   .navbar-brand{
-    font-size: xx-large;
+    font-size: x-large;
   }
+
+
 
 }

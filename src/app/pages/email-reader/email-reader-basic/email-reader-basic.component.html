@@ -8,17 +8,7 @@
       <app-email-reader-form (emitEmail)="sendEmail($event)" (emitEmailForm)="loadEmailForm($event)" />
     </fieldset>
   </div>
-<!--  <div class="col-md-6 col-sm-12 resizable panel-resizable mb-0"-->
-<!--       mwlResizable-->
-<!--       [ngStyle]="style"-->
-<!--       [enableGhostResize]="true"-->
-<!--       (resizeEnd)="onResizeEnd($event)">-->
-<!--    <app-up-to-date [emails]="emails"-->
-<!--                    mwlResizeHandle-->
-<!--                    [resizeEdges]="{ left: true}"-->
-<!--                    (deleteEmailEmitter)="deleteEmail($event)"-->
-<!--    ></app-up-to-date>-->
-<!--  </div>-->
+
   <div class="col-md-6 col-sm-12 resizable panel-resizable mb-0"
        [ngStyle]="style">
     <app-up-to-date emailPresentationType="table"></app-up-to-date>

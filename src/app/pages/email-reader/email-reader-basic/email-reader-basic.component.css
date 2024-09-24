@@ -23,6 +23,10 @@ mwlResizable {
   width: 100%;
 }
 
+.resizable .resize-handle {
+  pointer-events: none;
+}
+
 .resize-handle-top {
   top: 0;
 }

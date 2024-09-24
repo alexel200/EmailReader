@@ -8,7 +8,6 @@ import {Email} from "../interfaces/email";
 export class EmailFilterPipe implements PipeTransform {
 
   transform(emails: Email[], filter: string = 'all', search:string = ''): Email[] {
-    console.log('search => ' + search);
     let tableValues: Email[] = emails;
     if(search.trim().length > 0){
       tableValues = tableValues.filter(email => {
