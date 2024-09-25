@@ -2,11 +2,11 @@
   <nav class="navbar navbar-dark navbar-expand-lg" [ngClass]="isNavbarFixed ? 'fixed-top' : '' ">
     <div class="container-fluid">
       <div class="navbar-brand">
-        <img src="./assets/images/upm-logo.png" alt="UPM Logo">
+        <img src="./assets/images/upm-logo-informaticos.png" alt="UPM Logo">
 
       </div>
       <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">&#9776;</button>
-      <div  [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse justify-content-lg-end">
+      <div  [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse justify-content-end justify-content-end">
         <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link" [routerLink]="''" (click)="isMenuCollapsed = true" [routerLinkActive]="['is-active']" [routerLinkActiveOptions]="{ exact: true }">Email Reader</a>
