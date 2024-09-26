@@ -1,0 +1,12 @@
+<div class="search-table">
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Look for something in your emails"
+      [(ngModel)]="emailSearchText">
+    <button type="button" class="btn btn-primary" (click)="search()">
+      <fa-icon [icon]="faSearch"></fa-icon>
+    </button>
+  </div>
+</div>

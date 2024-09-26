@@ -1,0 +1,26 @@
+.email{
+  background-color: grey;
+  height: 80vh;
+  min-height: 10rem;
+}
+.fieldsetTable{
+  max-height: 26rem !important;
+}
+
+.fieldsetList{
+  max-height: 50rem !important;
+}
+
+.messageTable{
+  height: 17rem !important;
+}
+
+.messageList{
+  max-height: 40rem !important;
+}
+
+
+
+
+
+

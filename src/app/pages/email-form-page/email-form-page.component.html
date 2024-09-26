@@ -1,0 +1,11 @@
+<div class="row">
+  <ngb-alert type="primary" class="mt-3" *ngIf="displayAlert" >
+    The email <strong>"{{tmpMessage.subject}}"</strong> has been sent to <strong>{{tmpMessage.to}}</strong>
+  </ngb-alert>
+  <div class="col-md-12">
+    <fieldset class="rounded-3 p-3">
+      <legend class="float-none w-auto px-3">New Email</legend>
+      <app-email-reader-form formType="list" (emitEmail)="sendEmail($event)" (emitEmailForm)="loadEmailForm($event)"  />
+    </fieldset>
+  </div>
+</div>
