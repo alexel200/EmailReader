@@ -3,13 +3,13 @@
     <fieldset class="rounded-3 p-3">
       <legend class="float-none w-auto px-3">Reading Email</legend>
       <div class="row">
-        <div class="col">
+        <div class="col-md-6 col-sm-12">
           <div class="input-group">
             <label for="emailId" class="input-group-text">Email Unique Identifier</label>
             <input type="text" id="emailId" readonly disabled name="emailId" class="form-control" value="{{email.id}}">
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-6 col-sm-12 mt-3 mt-md-0">
           <div class="input-group">
             <label for="subject" class="input-group-text">From</label>
             <input type="text" id="subject" name="from" readonly disabled class="form-control" value="{{email.subject}}">
@@ -17,14 +17,14 @@
         </div>
       </div>
       <div class="row mt-3">
-        <div class="col">
+        <div class="col-md-6 col-sm-12">
           <div class="input-group">
             <label for="from" class="input-group-text">From</label>
             <input type="text" id="from" name="from" readonly disabled class="form-control" value="{{email.from}}">
           </div>
         </div>
 
-        <div class="col">
+        <div class="col-md-6 col-sm-12 mt-3 mt-md-0">
           <div class="input-group">
             <label for="to" class="input-group-text">To</label>
             <input type="text" id="to" readonly disabled name="emailId" class="form-control" value="{{email.to}}">
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="row mt-3">
-        <div class="col">
+        <div class="col-md-6 col-sm-12">
           <div class="input-group">
             <label for="body" class="input-group-text">Message</label>
             <textarea id="body" name="body" disabled readonly class="form-control" value="{{email.body}}"></textarea>
